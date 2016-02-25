@@ -54,6 +54,15 @@ def slovar_gdp_rast():
                 GDP_rast[podsez[0]]= {'drzava': podsez[0]}
                 GDP_rast[podsez[0]][leto] = float(podsez[1])
 
+def slovar_populacija():
+    for leto in range(2006, 2016):
+        ime_dat = 'Populacija' + str(leto) + '.txt'
+        for podsez in naredi_seznam(ime_dat, leto, 3):
+            if podsez[0] in populacija.keys():
+                populacija[podsez[0]][leto] = int(podsez[1])
+            else:
+                populacija[podsez[0]]= {'drzava': podsez[0]}
+                populacija[podsez[0]][leto] = int(podsez[1])
 
 def slovar_rast_populacije():
     for leto in range(2008, 2016):
@@ -76,11 +85,12 @@ def zapisi_csv(ime, slovar):
 slovar_gdp_preb()
 slovar_gdp_rast()
 slovar_rast_populacije()
-
+slovar_populacija()
 
 zapisi_csv('GDP_na_prebivalca.csv', GDP_na_prebivalca)
 zapisi_csv('GDP_rast.csv', GDP_rast)
 zapisi_csv('rast_populacije.csv', rast_populacije)
+zapisi_csv('populacija.csv', populacija)
 
 
             
