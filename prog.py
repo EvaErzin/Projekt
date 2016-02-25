@@ -89,8 +89,8 @@ slovar_populacija()
 
 zapisi_csv('GDP_na_prebivalca.csv', GDP_na_prebivalca)
 zapisi_csv('GDP_rast.csv', GDP_rast)
-zapisi_csv('populacija.csv', populacija)
 zapisi_csv('rast_populacije.csv', rast_populacije)
+zapisi_csv('populacija.csv', populacija)
 
 
             
